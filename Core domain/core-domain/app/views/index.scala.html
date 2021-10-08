@@ -1,0 +1,38 @@
+@()
+
+@main("Welcome to Play") {
+  <h1>Welcome to Play!</h1>
+  <h2 id="response"></h2>
+  <button onclick="myFunction()">Assortiment</button>
+  <label for="name">Name: </label>
+  <input type="text" id="name" name="name"><br><br>
+  <label for="keuze">Keuze: </label>
+  <input type="text" id="keuze" name="keuze"><br><br>
+  <button onclick="Store()">Store</button>
+  <button onclick="ShoppingList()">ShoppingList</button>
+    <script>
+    function myFunction() {
+    fetch("/assortiment ")
+    .then(response => response.json())
+    .then(data => document.getElementById("response").innerHTML = data);
+    }
+
+    async function Store(){
+    var ID = parseInt(document.getElementById("name").value);
+    var Choice = document.getElementById("keuze").value;
+    const response = await fetch('/choice', {
+                method: 'POST',
+                headers: {
+                    'Accept': "application/json; charset=utf-8",
+                    'Content-Type': "application/json; charset=utf-8"
+                },
+                body: JSON.stringify({ "EmployeeID": ID, "Choice" : Choice })
+
+            });
+            }
+
+     function ShoppingList() {
+     location.replace("/shoppinglist")
+    }
+    </script>
+}

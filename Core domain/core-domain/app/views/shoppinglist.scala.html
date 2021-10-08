@@ -1,0 +1,21 @@
+@()
+
+@main("ShoppingList") {
+  <h1>ShoppingList</h1>
+  <h2 id="response"></h2>
+  <button onclick="myFunction()">Assortiment</button>
+  <button onclick="Home()">Home</button>
+
+    <script>
+    function myFunction() {
+    fetch("/shoppinglistresult ")
+    .then(response => response.json())
+    .then(data => document.getElementById("response").innerHTML = JSON.stringify(data));
+    }
+
+    function Home() {
+     location.replace("/")
+    }
+
+    </script>
+}
