@@ -17,6 +17,7 @@ libraryDependencies ++= Seq(
   "mysql" % "mysql-connector-java" % "5.1.44"
 )
 libraryDependencies += jdbc % Test
+libraryDependencies += ws
 
 // Adds additional packages into Twirl
 //TwirlKeys.templateImports += "nvt.controllers._"

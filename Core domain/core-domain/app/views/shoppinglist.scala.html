@@ -3,7 +3,9 @@
 @main("ShoppingList") {
   <h1>ShoppingList</h1>
   <h2 id="response"></h2>
-  <button onclick="myFunction()">Assortiment</button>
+  <h2 id="corvee"></h2>
+  <button onclick="myFunction()">Keuzes</button>
+  <button onclick="corveeer()">Corveeer</button>
   <button onclick="Home()">Home</button>
 
     <script>
@@ -11,6 +13,11 @@
     fetch("/shoppinglistresult ")
     .then(response => response.json())
     .then(data => document.getElementById("response").innerHTML = JSON.stringify(data));
+    }
+    function corveeer() {
+    fetch("/corveeer ")
+    .then(response => response.json())
+    .then(data => document.getElementById("corvee").innerHTML = JSON.stringify(data));
     }
 
     function Home() {

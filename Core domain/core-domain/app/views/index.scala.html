@@ -1,11 +1,11 @@
 @()
 
-@main("Welcome to Play") {
-  <h1>Welcome to Play!</h1>
+@main("Core domain") {
+  <h1>Core domain</h1>
   <h2 id="response"></h2>
   <button onclick="myFunction()">Assortiment</button>
-  <label for="name">Name: </label>
-  <input type="text" id="name" name="name"><br><br>
+   <br>
+  <label >Name: Pietje </label><br>
   <label for="keuze">Keuze: </label>
   <input type="text" id="keuze" name="keuze"><br><br>
   <button onclick="Store()">Store</button>
@@ -18,7 +18,8 @@
     }
 
     async function Store(){
-    var ID = parseInt(document.getElementById("name").value);
+
+    //var ID = parseInt(document.getElementById("name").value);
     var Choice = document.getElementById("keuze").value;
     const response = await fetch('/choice', {
                 method: 'POST',
@@ -26,7 +27,7 @@
                     'Accept': "application/json; charset=utf-8",
                     'Content-Type': "application/json; charset=utf-8"
                 },
-                body: JSON.stringify({ "EmployeeID": ID, "Choice" : Choice })
+                body: JSON.stringify({ "EmployeeID": 15, "Choice" : Choice })
 
             });
             }

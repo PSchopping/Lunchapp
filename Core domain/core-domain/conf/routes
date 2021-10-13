@@ -22,3 +22,8 @@ GET    /shoppinglist					  controllers.ShoppingListPageController.index()
 # Show the shopping list based on choices from users
 GET    /shoppinglistresult				  controllers.ShoppingListController.opvraag
 
+# Map static resources from the /public folder to the /assets URL path
+GET     /corveeer					controllers.CorveeerOpvraagController.opvraag
+
+
+
