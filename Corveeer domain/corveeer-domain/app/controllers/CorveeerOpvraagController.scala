@@ -12,11 +12,11 @@ import scala.collection.mutable.ArrayBuffer
 class CorveeerOpvraagController @Inject()( val controllerComponents: ControllerComponents)
   extends BaseController {
   val db = Databases(
-    driver = "com.mysql.jdbc.Driver",
-    url = "jdbc:mysql://localhost/employees?autoReconnect=true&useSSL=false",
+    driver = "org.postgresql.Driver",
+    url = "jdbc:postgresql://localhost/employees?autoReconnect=true&useSSL=false",
     config = Map(
-      "username" -> "root",
-      "password" -> "AwE2020!?"
+      "username" -> "postgres",
+      "password" -> "root"
     )
   )
 
